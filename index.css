@@ -3,11 +3,18 @@ body{
     margin : 0px;
     padding : 0px;
 }
+.main-container{
+    width:100%;
+    position : relative;
+    margin : 0px;
+}
 .navbar{
+    position : fixed;
     background-color: gray;
     width : 100%;
-    display : block;
-    position : fixed;
+    position:sticky;
+    position: -webkit-sticky;
+    top: 0; /* required */
     margin : 0px;
     overflow: hidden;
     border-bottom: 4px solid wheat;
@@ -17,10 +24,9 @@ body{
 ul{
     display : block;
     width : 100%;
-    margin-left : auto;
-    margin-right : auto;
     list-style-type: none;
-    padding-left : 300px;
+    padding-left : 200px;
+    margin : 10 auto;
 }
 
 li{
@@ -29,8 +35,7 @@ li{
 }
 
 #search-bar{
-    padding-left: 150px;
-    padding-right:150px;
+    margin: 0 250px;
 }
 
 input{
@@ -53,11 +58,96 @@ input{
 
 /* profile section(image, bio) */
 .profile{
-    width : 60%;
-    margin : 0auto;
-    display : block;
+    width : 68%;
+    /* height auto doesn't wrap around image */
+    height : 250px;
+    margin : 0 auto;
+    display :block;
+    z-index : 1;
+    padding : 30px;
+    background-color : ivory;
+    border-bottom:4px solid gray;
 }
 
+/* dp info */
+.dp{
+    /* display: inline; */
+    float : left;
+    border-radius: 50%;
+    height: 150;
+    width: 150px;
+    padding : 20px 40px;
+}
+
+.profile-content{
+    margin : 40px;
+    padding-top: 20px;
+    display : inline;
+    vertical-align : top;
+    position: relative;
+}
+
+/* name */
+
+.title-buttons{
+    display: inline-block;
+    margin : 10px 10px;
+    font-size : 30px;
+}
+
+.follow{
+    display : inline-block;
+    margin-top : 15px;
+    margin-left : 15px;
+    margin-right:1px;
+    font-size : 20px;
+    color : white;
+    vertical-align: baseline;
+    background-color: darkblue;
+    border-radius: 4px;
+    width : 100px;
+    text-align: center;
+    padding : 10px;
+}
+
+i{
+    background-color: darkblue;
+    border-radius: 4px;
+    margin-top : 15px;
+    margin-left : 1px;
+    color : white;
+    vertical-align: top;
+    height : 44px;
+    width : 40px;
+    display : flex;
+    text-align: center;
+    align-items: center;
+    /* to do vertically align the caret */
+}
+
+.spread{
+    vertical-align: middle;
+    margin-left: 3px;
+}
+
+/* follower data */
+.follower-info{
+    display: inline-block;
+    margin : 0px 10px;
+    font-size : 20px;
+    padding-left: 38px;
+}
+
+/* bio information */
+
+.bio{
+    font-size: 20px;
+    display: block;
+    margin: 20px 276px;
+    clear :right;
+    position: absolute;
+    width : 100%;   
+}
 
 
 /* image grid */
