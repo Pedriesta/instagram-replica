@@ -1,0 +1,63 @@
+/* navbar */
+body{
+    margin : 0px;
+    padding : 0px;
+}
+.navbar{
+    background-color: gray;
+    width : 100%;
+    display : block;
+    position : fixed;
+    margin : 0px;
+    overflow: hidden;
+    border-bottom: 4px solid wheat;
+    /* to do center the navbar when width is less than 100% */
+}
+
+ul{
+    display : block;
+    width : 100%;
+    margin-left : auto;
+    margin-right : auto;
+    list-style-type: none;
+    padding-left : 300px;
+}
+
+li{
+    display : inline;
+    font-size : 30px;
+}
+
+#search-bar{
+    padding-left: 150px;
+    padding-right:150px;
+}
+
+input{
+    height: 30px;
+    vertical-align: middle;
+    border-radius: 6px;
+    text-align: center;
+    background-color: honeydew;
+    width : 200px;
+    /* to do add search icon  */
+}
+
+#icon{
+    padding-left: 12px;
+    padding-right : 12px;
+    vertical-align: middle;
+    /* to do adjust height */
+}
+
+
+/* profile section(image, bio) */
+.profile{
+    width : 60%;
+    margin : 0auto;
+    display : block;
+}
+
+
+
+/* image grid */
