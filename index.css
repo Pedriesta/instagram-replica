@@ -42,19 +42,41 @@ li{
     /* font-family:"Brush Script MT", cursive; */
 }
 
+.with-icon{
+    display: inline-flex;
+    vertical-align: bottom;
+    position : relative;
+    border-radius: 6px;
+    height: 30px;
+    background-color: honeydew;
+    width : 250px;
+    margin-bottom: 5px;
+}
+
+.with-icon .material-icons{
+    padding : 0.2rem 0.5rem 0.3rem 0.5rem;
+    /* position : absolute; */
+    /* left :10%; */
+    
+}
+.with~icon:focus-within{
+    border :2px solid peachpuff;
+}
 #search-bar{
     margin: 0 150px 0 250px;
 }
 
 input{
-    height: 30px;
-    vertical-align: middle;
-    border-radius: 6px;
-    text-align: center;
+    display: flex;
+    text-align: justify;
     background-color: honeydew;
-    width : 250px;
-    /* to do add search icon  */
+    border-style: none;
 }
+
+input:focus{
+    outline: none;
+}
+
 
 #icon{
     padding-left: 12px;
@@ -123,22 +145,23 @@ input{
     padding : 10px;
     cursor : pointer;
 }
-
-i{
+.caret{
     background-color: darkblue;
+    display: inline-block;
     border-radius: 4px;
-    margin-top : 15px;
     margin-left : 1px;
-    color : white;
-    vertical-align: top;
     height : 44px;
     width : 40px;
-    display : flex;
     text-align: center;
     align-items: center;
-    /* to do vertically align the caret */
+    vertical-align: middle;
 }
 
+.caret span{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 44px;
+}
 .spread{
     vertical-align: middle;
     margin-left: 3px;
