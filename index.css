@@ -13,14 +13,14 @@ body{
 }
 .navbar{
     position : fixed;
-    background-color: gray;
+    background-color: snow;
     width : 100%;
     position:sticky;
     position: -webkit-sticky;
     top: 0; /* required */
     margin : 0px;
     overflow: hidden;
-    border-bottom: 4px solid wheat;
+    border-bottom: 2px solid black;
     opacity: 1;
     z-index : 10;
     /* to do center the navbar when width is less than 100% */
@@ -48,7 +48,7 @@ li{
     position : relative;
     border-radius: 6px;
     height: 30px;
-    background-color: honeydew;
+    background-color : whitesmoke;
     width : 250px;
     margin-bottom: 5px;
 }
@@ -69,7 +69,7 @@ li{
 input{
     display: flex;
     text-align: justify;
-    background-color: honeydew;
+    background-color: whitesmoke;
     border-style: none;
 }
 
@@ -100,8 +100,8 @@ input:focus{
     display :block;
     z-index : 1;
     padding : 30px;
-    background-color : ivory;
-    border-bottom:4px solid gray;
+    /* background-color : ivory; */
+    border-bottom:2px solid black;
 }
 
 /* dp info */
