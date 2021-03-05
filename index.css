@@ -87,7 +87,11 @@ input:focus{
 
 .material-icons{
     cursor : pointer;
+    transition : 0.1s ease-in;
+}
 
+.material-icons:hover{
+    transform : scale(1.5, 1.5);
 }
 
 
@@ -130,6 +134,10 @@ input:focus{
     font-size : 30px;
 }
 
+.follow:hover{
+    transform: scale(1.5);
+}
+
 .follow{
     display : inline-block;
     margin-top : 15px;
@@ -144,6 +152,8 @@ input:focus{
     text-align: center;
     padding : 10px;
     cursor : pointer;
+    transition : 0.4s;
+
 }
 .caret{
     background-color: darkblue;
@@ -155,6 +165,12 @@ input:focus{
     text-align: center;
     align-items: center;
     vertical-align: middle;
+    transition : 0.4s;
+
+}
+
+.caret:hover{
+    transform: scale(1.5); /* IE 9 */
 }
 
 .caret span{
@@ -165,6 +181,11 @@ input:focus{
 .spread{
     vertical-align: middle;
     margin-left: 3px;
+    transition : 0.4s;
+}
+
+.spread:hover{
+    transform : scale(1.5);
 }
 
 /* follower data */
@@ -216,6 +237,15 @@ input:focus{
 
 .gallery:hover .gallery__img{
     opacity: 0.3;
+    transform: scale(1.1, 1.1);
+    animation : spin 0.5s ease-in 1;
+}
+
+@keyframes spin{
+    0% {transform : rotate(0deg);}
+    25% {transform : rotate(2.5deg);}
+    50% {transform : rotate(-2.5deg);}
+    100% {transform : rotate(0deg);}
 }
 
 .gallery:hover .likes{
