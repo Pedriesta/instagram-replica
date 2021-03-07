@@ -21,7 +21,7 @@ body{
     width : 100%;
     position:sticky;
     position: -webkit-sticky;
-    top: 0; /* required */
+    top: 0;
     margin : 0rem;
     overflow: hidden;
     border-bottom: 0.2rem solid black;
@@ -32,10 +32,9 @@ body{
 
 ul{
     display : block;
-    width : 100%;
     list-style-type: none;
     padding-left : 20rem;
-    margin : 1rem auto;
+    margin : 1rem;
 }
 
 li{
@@ -59,13 +58,8 @@ li{
 
 .with-icon .material-icons{
     padding : 0.2rem 0.5rem 0.3rem 0.5rem;
-    /* position : absolute; */
-    /* left :10%; */
-    
 }
-.with~icon:focus-within{
-    border :0.2rem solid peachpuff;
-}
+
 #search-bar{
     margin: 0 15rem 0 25rem;
 }
@@ -81,12 +75,10 @@ input:focus{
     outline: none;
 }
 
-
 #icon{
     padding-left: 1.2rem;
     padding-right : 1.2rem;
     vertical-align: middle;
-    /* to do adjust height */
 }
 
 .material-icons{
@@ -113,7 +105,7 @@ input:focus{
 }
 
 /* dp info */
-.dp{
+.profile-picture{
     /* display: inline; */
     float : left;
     border-radius: 50%;
@@ -193,7 +185,7 @@ input:focus{
 }
 
 /* follower data */
-.follower-info{
+.posts-follow-follower-info{
     display: inline-block;
     margin : 0 1rem;
     font-size : 2rem;
@@ -252,7 +244,7 @@ input:focus{
     100% {transform : rotate(0deg);}
 }
 
-.gallery:hover .likes{
+.gallery:hover .likes-comments{
     opacity: 1;
     z-index : 100;
 }
@@ -266,7 +258,7 @@ input:focus{
 
 }
 
-.likes{
+.likes-comments{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
