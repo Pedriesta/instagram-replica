@@ -15,6 +15,7 @@ html{
 body{
     margin : 0rem;
     padding : 0rem;
+    background-color: linen;
 }
 .main-container{
     width:100%;
@@ -22,16 +23,19 @@ body{
 #brand{
     cursor: pointer;
     font-family: "Party LET", "Curlz MT", fantasy;
-    color :lightsalmon;
+    color :red;
 }
 .navbar{
-    /* background-color: snow; */
-    position:sticky;
-    margin : 1rem 0rem 0 0;
+    position : fixed;
+    width: 100%;
+    padding-top: 1rem;
     overflow: hidden;
     border-bottom: 0.2rem solid black;
     opacity: 1;
-    z-index : 10;
+    z-index : 100;
+    top: 0;
+    left: 0;
+    background-color: blanchedalmond;
     /* to do center the navbar when width is less than 100% */
 }
 nav{
@@ -87,7 +91,6 @@ input:focus{
     cursor : pointer;
     transition : 0.1s ease-in;
 }
-
 .material-icons:hover{
     transform : scale(1.5, 1.5);
 }
@@ -100,8 +103,8 @@ input:focus{
     display: flex;
     justify-content : center;
     gap : 10rem;
-    padding : 6rem 0rem;
-    margin-bottom: 2rem;
+    padding-top : 10rem;
+    margin-bottom: 5rem;
     flex-direction: row;
 }
 
@@ -166,6 +169,10 @@ input:focus{
     transition : 0.4s;
 }
 
+.arrow-down{
+    color:white;
+}
+
 .caret:hover{
     transform: scale(1.5); /* IE 9 */
 }
@@ -176,6 +183,7 @@ input:focus{
 .spread{
     vertical-align: middle;
     transition : 0.4s;
+    font-size: 36px;
 }
 
 .spread:hover{

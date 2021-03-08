@@ -1,5 +1,4 @@
-let bio = "";
-bio = bio + "Tekion".bold() + "<br>" + "\nSoftware Company<br>".italics() + "One platform that seamlessly connects your entire business.";
+const bio = "Tekion".bold() + "<br>" + "\nSoftware Company<br>".italics() + "One platform that seamlessly connects your entire business.";
 
 function getFetchedData(){
     const fetchResult = {
@@ -9,78 +8,79 @@ function getFetchedData(){
         "numberOfPosts" : 12,
         "posts" : [
             {
-            "imageUrl" : "download5.jpeg",
+            "imageUrl" : "./images/download5.jpeg",
             "caption" : "Tekion Corp",
             "likes" : 45,
             "comments" : 50
             },
             {
-                "imageUrl" : "download1.jpeg",
+                "imageUrl" : "./images/download1.jpeg",
                 "caption" : "Tekion Corp",
                 "likes" : 45,
                 "comments" : 50
             },
             {
-                "imageUrl" : "downloa2.jpeg",
+                "imageUrl" : "./images/downloa2.jpeg",
                 "caption" : "Tekion Corp",
                 "likes" : 45,
                 "comments" : 50
             },
             {
-                "imageUrl" : "download3.jpeg",
+                "imageUrl" : "./images/download3.jpeg",
                 "caption" : "Tekion Corp",
                 "likes" : 45,
                 "comments" : 50
             },
             {
-                "imageUrl" : "download4.jpeg",
+                "imageUrl" : "./images/download4.jpeg",
                 "caption" : "Tekion Corp",
                 "likes" : 45,
                 "comments" : 50
             },
             {
-                "imageUrl" : "download5.jpeg",
+                "imageUrl" : "./images/download5.jpeg",
                 "caption" : "Tekion Corp",
                 "likes" : 45,
                 "comments" : 50
             },
             {
-                "imageUrl" : "download6.jpeg",
+                "imageUrl" : "./images/download6.jpeg",
                 "caption" : "Tekion Corp",
                 "likes" : 45,
                 "comments" : 50
             },
             {
-                "imageUrl" : "download1.jpeg",
+                "imageUrl" : "./images/download1.jpeg",
                 "caption" : "Tekion Corp",
                 "likes" : 45,
                 "comments" : 50
             },
             {
-                "imageUrl" : "downloa2.jpeg",
+                "imageUrl" : "./images/downloa2.jpeg",
                 "caption" : "Tekion Corp",
                 "likes" : 45,
                 "comments" : 50
             },
             {
-                "imageUrl" : "download3.jpeg",
+                "imageUrl" : "./images/download3.jpeg",
                 "caption" : "Tekion Corp",
                 "likes" : 45,
                 "comments" : 50
             },
             {
-                "imageUrl" : "download4.jpeg",
+                "imageUrl" : "./images/download4.jpeg",
                 "caption" : "Tekion Corp",
                 "likes" : 45,
                 "comments" : 50
             },
         ],
-        "profilePicture" : "download.png",
+        "profilePicture" : "./images/download.png",
         "bio" : bio
     }
 
     return fetchResult;
 }
+
 function fillData(){
     loadImages();
     loadProfilePicture();
