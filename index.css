@@ -213,7 +213,7 @@ input:focus{
     cursor : pointer;
 }
 
-.gallery:hover .gallery__img{
+.image_wrapper:hover .gallery__img{
     opacity: 0.3;
     transform: scale(1.1, 1.1);
     animation : spin 0.5s ease-in 1;
@@ -226,12 +226,12 @@ input:focus{
     100% {transform : rotate(0deg);}
 }
 
-.gallery:hover .likes-comments{
+.image_wrapper:hover .likes-comments{
     opacity: 1;
     z-index : 100;
 }
 
-.gallery{
+.image_wrapper{
     margin : 1.5rem 1.5rem;
     /* padding : 10px; */
     /* background-color: black; */
