@@ -48,12 +48,14 @@ nav{
     padding-left: 5rem;
 }
 .with-icon{
-    display: inline-flex;
+    display: flex;
+    align-items: center;
     border-radius: 0.6rem;
     height: 3rem;
     background-color : whitesmoke;
     width : 25rem;
-    margin-bottom: 0.   5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .navigation-icons{
@@ -157,7 +159,7 @@ input:focus{
     text-align: center;
     padding : 1rem;
     cursor : pointer;
-    transition : 0.4s;
+    transition : 0.2s;
 
 }
 .caret{
