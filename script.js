@@ -1,94 +1,21 @@
 const bio = "Tekion".bold() + "<br>" + "\nSoftware Company<br>".italics() + "One platform that seamlessly connects your entire business.";
 
-function getFetchedData(){
-    const fetchResult = {
-        "name" : "tekioncorp",
-        "followers" : 346,
-        "following" : 500,
-        "numberOfPosts" : 12,
-        "posts" : [
-            {
-            "imageUrl" : "./images/download5.jpeg",
-            "caption" : "Tekion Corp",
-            "likes" : 45,
-            "comments" : 50
-            },
-            {
-                "imageUrl" : "./images/download1.jpeg",
-                "caption" : "Tekion Corp",
-                "likes" : 45,
-                "comments" : 50
-            },
-            {
-                "imageUrl" : "./images/downloa2.jpeg",
-                "caption" : "Tekion Corp",
-                "likes" : 45,
-                "comments" : 50
-            },
-            {
-                "imageUrl" : "./images/download3.jpeg",
-                "caption" : "Tekion Corp",
-                "likes" : 45,
-                "comments" : 50
-            },
-            {
-                "imageUrl" : "./images/download4.jpeg",
-                "caption" : "Tekion Corp",
-                "likes" : 45,
-                "comments" : 50
-            },
-            {
-                "imageUrl" : "./images/download5.jpeg",
-                "caption" : "Tekion Corp",
-                "likes" : 45,
-                "comments" : 50
-            },
-            {
-                "imageUrl" : "./images/download6.jpeg",
-                "caption" : "Tekion Corp",
-                "likes" : 45,
-                "comments" : 50
-            },
-            {
-                "imageUrl" : "./images/download1.jpeg",
-                "caption" : "Tekion Corp",
-                "likes" : 45,
-                "comments" : 50
-            },
-            {
-                "imageUrl" : "./images/downloa2.jpeg",
-                "caption" : "Tekion Corp",
-                "likes" : 45,
-                "comments" : 50
-            },
-            {
-                "imageUrl" : "./images/download3.jpeg",
-                "caption" : "Tekion Corp",
-                "likes" : 45,
-                "comments" : 50
-            },
-            {
-                "imageUrl" : "./images/download4.jpeg",
-                "caption" : "Tekion Corp",
-                "likes" : 45,
-                "comments" : 50
-            },
-        ],
-        "profilePicture" : "./images/download.png",
-        "bio" : bio
-    }
-
-    return fetchResult;
-}
-
 function fillData(){
-    loadImages();
-    loadProfilePicture();
-    loadUserInfo();
-
+    fetch('./data.json').then(response => {
+        return response.json();
+      }).then(data => {
+          loadImages(data);
+          loadProfilePicture(data);
+          loadUserInfo(data);
+        console.log(data);
+      }).catch(err => {
+          console.log(err);
+        // Do something for an error here
+      });
 }
-function loadImages(){
-    posts = getFetchedData().posts;
+
+function loadImages(data){
+    posts = data.posts;
     posts.forEach((post, i) => {
         // image container
         imageContainer = createImageWrapper(post);
@@ -97,14 +24,14 @@ function loadImages(){
     });
 }
 
-function loadProfilePicture(){
-    imageUrl = getFetchedData().profilePicture;
+function loadProfilePicture(data){
+    imageUrl = data.profilePicture;
     let profilePicture = createProfilePicture(imageUrl);
     document.getElementsByClassName("profile-picture-wrapper")[0].appendChild(profilePicture);
 }
 
-function loadUserInfo(){
-    const fetchResult = getFetchedData();
+function loadUserInfo(data){
+    const fetchResult = data;
     //set user name
     document.getElementsByClassName("name")[0].innerHTML = fetchResult.name;
     // set number of posts

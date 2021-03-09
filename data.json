@@ -1,0 +1,76 @@
+{
+"name" : "tekioncorp",
+"followers" : 346,
+"following" : 500,
+"numberOfPosts" : 12,
+"posts" : [
+    {
+        "imageUrl" : "./images/download5.jpeg",
+        "caption" : "Tekion Corp",
+        "likes" : 45,
+        "comments" : 50
+    },
+    {
+        "imageUrl" : "./images/download1.jpeg",
+        "caption" : "Tekion Corp",
+        "likes" : 45,
+        "comments" : 50
+    },
+    {
+        "imageUrl" : "./images/downloa2.jpeg",
+        "caption" : "Tekion Corp",
+        "likes" : 45,
+        "comments" : 50
+    },
+    {
+        "imageUrl" : "./images/download3.jpeg",
+        "caption" : "Tekion Corp",
+        "likes" : 45,
+        "comments" : 50
+    },
+    {
+        "imageUrl" : "./images/download4.jpeg",
+        "caption" : "Tekion Corp",
+        "likes" : 45,
+        "comments" : 50
+    },
+    {
+        "imageUrl" : "./images/download5.jpeg",
+        "caption" : "Tekion Corp",
+        "likes" : 45,
+        "comments" : 50
+    },
+    {
+        "imageUrl" : "./images/download6.jpeg",
+        "caption" : "Tekion Corp",
+        "likes" : 45,
+        "comments" : 50
+    },
+    {
+        "imageUrl" : "./images/download1.jpeg",
+        "caption" : "Tekion Corp",
+        "likes" : 45,
+        "comments" : 50
+    },
+    {
+        "imageUrl" : "./images/downloa2.jpeg",
+        "caption" : "Tekion Corp",
+        "likes" : 45,
+        "comments" : 50
+    },
+    {
+        "imageUrl" : "./images/download3.jpeg",
+        "caption" : "Tekion Corp",
+        "likes" : 45,
+        "comments" : 50
+    },
+    {
+        "imageUrl" : "./images/download4.jpeg",
+        "caption" : "Tekion Corp",
+        "likes" : 45,
+        "comments" : 50
+    }
+],
+"profilePicture" : "./images/download.png",
+"bio" : "Tekion"
+}
