@@ -4,6 +4,7 @@ function fillData(){
     fetch('./data.json').then(response => {
         return response.json();
       }).then(data => {
+          data.bio = bio;
           loadImages(data);
           loadProfilePicture(data);
           loadUserInfo(data);
@@ -51,7 +52,7 @@ function createImageWrapper(post){
 
     //like and comment icons
     
-    let iconWrapper = createLikeCommentIconWrapper();
+    let iconWrapper = createLikeCommentIconWrapper(post);
     //Image
     let image = document.createElement("img");
     image.setAttribute("src", post.imageUrl);
@@ -65,20 +66,30 @@ function createImageWrapper(post){
     return imageContainer;
 }
 
-function createLikeCommentIconWrapper(){
+function createLikeCommentIconWrapper(post){
     let likeIcon = document.createElement("span");
     likeIcon.className = "material-icons";
     likeIcon.innerHTML = "favorite_border";
+    likeIcon.style = "color : black";
+
+    let numberOfLikes = document.createElement("p");
+    numberOfLikes.innerHTML = post.likes;
 
     let commentIcon = document.createElement("span");
     commentIcon.className = "material-icons";
+    commentIcon.style = "color : black";
     commentIcon.innerHTML = "chat_bubble";
+
+    let numberOfComments = document.createElement("p");
+    numberOfComments.innerHTML = post.comments;
 
     let iconWrapper = document.createElement("div");
     iconWrapper.className = "likes-comments";
 
     iconWrapper.appendChild(likeIcon);
+    iconWrapper.appendChild(numberOfLikes);
     iconWrapper.appendChild(commentIcon);
+    iconWrapper.appendChild(numberOfComments);
 
     return iconWrapper;
 }
