@@ -1,75 +1,84 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Instagram</title>
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-    <script src="script.js"></script>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
-</head>
-<body onload="fillData();">
-<!-- Main content -->
-<div class="main-container">
-    <!-- HEADER -->
-    <!-- navbar -->
-    <header class="navbar container">
-        <nav>
-                <div id="brand">Instagram</div>
-                <div id="search-bar">
-                    <div class="with-icon">
-                        <span class="material-icons">search</span><input type="text" placeholder="Search..">
+    <head>
+        <title>Shutter</title>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+        <script type="module" src="./scripts/Generator.js"></script>
+        <script type="module">
+            import {eventHandlers} from './scripts/EventHandlers.js';
+            window.eventHandlers = eventHandlers;
+        </script>
+    </head>
+    <body>
+    <!-- Main content -->
+    <div id="mainContainer">
+        <!-- HEADER -->
+        <!-- navbar -->
+        <header class="container" id="navbar">
+            <nav>
+                    <div id="brand">Instagram</div>
+                    <div id="searchBar">
+                        <div id="withIcon">
+                            <span class="material-icons">search</span><input type="text" placeholder="Search..">
+                        </div>
+                    </div>
+                    <div id="navigationButtons">
+                        <div class="icon"><img src="./icons/home-24px.svg" class="navigationIcons"></div>
+                        <div class="icon"><img src="./icons/chat_bubble-24px.svg" class="navigationIcons"></div>
+                        <div class="icon"><img src="./icons/explore-24px.svg" class="navigationIcons"></div>
+                        <div class="icon"><img src="./icons/favorite_border-24px.svg" class="navigationIcons"></div>
+                        <div class="icon"><img src="./icons/perm_identity-24px.svg" class="navigationIcons"></div>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- HEADER ENDS -->
+
+        <!-- CONTENT -->
+        <!-- profile section -->
+        <div id="mainBody">
+            <div class="container" id="profile">
+                <div id="profilePictureWrapper">
+                </div>
+                <div id="profileContent">
+                    <!-- buttons and name -->
+                    <div id="titleButtons">
+                        <span id="name"></span>
+                        <span>
+                            <div id="follow" onclick="eventHandlers.toggleFollow()">follow</div>
+                        </span>
+                        <div id="caret">
+                            <span class="material-icons" id="arrowDown">keyboard_arrow_down</span>
+                        </div>
+                        <span class="material-icons" id="spread">more_horiz</span>
+                    </div>
+
+                    <!-- follower data -->
+
+                    <div id="postsFollowFollowerInfo">
+                        <b id="numberOfPosts"></b> posts<span class="space"></span><b id="followers"></b> followers<span class="space"></span><b id="following"></b> following
+                    </div>
+
+                    <div id="bio">
                     </div>
                 </div>
-                <div class="navigation-buttons">
-                    <div id="icon"><span class="material-icons navigation-icons">home</span></div>
-                    <div id="icon"><span class="material-icons navigation-icons">chat_bubble</span></div>
-                    <div id="icon"><span class="material-icons navigation-icons">travel_explore</span></div>
-                    <div id="icon"><span class="material-icons navigation-icons">favorite_border</span></div>
-                    <div id="icon"><span class="material-icons navigation-icons">person</span></div>
-                </div>
-            </ul>
-        </nav>
-    </header>
-    
-    <!-- HEADER ENDS -->
-
-    <!-- CONTENT -->
-    <!-- profile section -->
-    <div class="main-body">
-        <div class="container profile">
-            <div class="profile-picture-wrapper">
             </div>
-            <div class="profile-content">
-                <!-- buttons and name -->
-                <div class="title-buttons">
-                    <span class="name"></span>
-                    <span>
-                        <div class="follow">Follow</div>
-                    </span>
-                    <div class="caret">
-                        <span class="material-icons arrow-down">keyboard_arrow_down</span>
-                    </div>
-                    <span class="material-icons spread">more_horiz</span>
+            <div class="profileBorder"></div>
+
+            <!-- images -->
+            <div id="content">
+                <div id="contentTabs">
+                    <button class="contentTab"  id="imageTab" onclick="eventHandlers.viewImages()"><img src="./icons/grid_on-24px.svg" id="imageGridIcon">Images</button>
+                    <button class="contentTab" id="videoTab" onclick="eventHandlers.viewVideos()"><img src="./icons/tv_off-24px.svg" id="videoGridIcon">Videos</button>
                 </div>
-
-                <!-- follower data -->
-
-                <div class="posts-follow-follower-info">
-                    <b class="numberOfPosts"></b> posts<span class="space"></span><b class="followers"></b> followers<span class="space"></span><b class="following"></b> following
+                <div id="imageGrid"> 
                 </div>
-
-                <div class="bio">
+                <div id="videoGrid">
                 </div>
-            </div>
-        </div>
-        <div class="profile-border"></div>
-
-        <!-- images -->
-        <div class="content">
-            <div class="image-grid">
             </div>
         </div>
     </div>
-</div>
-</body>
+    </body>
 </html>

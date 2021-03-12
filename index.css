@@ -7,7 +7,7 @@ html{
     padding: 0 2rem;
 }
 
-.newline{
+.newLine{
     margin-top: 0.6rem;
     margin-bottom: 0rem;
 }
@@ -15,27 +15,28 @@ html{
 body{
     margin : 0rem;
     padding : 0rem;
-    background-color: mintcream;
+    background-color: #fafafa;
 }
-.main-container{
+#mainContainer{
     width:100%;
 }
 #brand{
     cursor: pointer;
     font-family: "Party LET", "Curlz MT", fantasy;
-    color :red;
+    color :black;
+    font-weight: bold;
 }
-.navbar{
+#navbar{
     position : fixed;
     width: 100%;
     padding-top: 0.8rem;
     overflow: hidden;
-    border-bottom: 0.2rem solid black;
+    border-bottom: 0.1rem solid black;
     opacity: 1;
     z-index : 100;
     top: 0;
     left: 0;
-    background-color: #121212;
+    background-color: #ffffff;
     /* to do center the navbar when width is less than 100% */
 }
 nav{
@@ -43,34 +44,35 @@ nav{
     flex-direction: row;
     justify-content: center;
     font-size: 3rem;
-    align-items: center;
+    align-items: flex-end;
     margin : 0 0 0.8rem 0;
     padding-left: 5rem;
 }
-.with-icon{
+#withIcon{
     display: flex;
     align-items: center;
-    border-radius: 0.6rem;
+    justify-content: center;
+    border-radius: 0.2rem;
     height: 3rem;
-    background-color : whitesmoke;
+    background-color : #fafafa;
+    border : 0.1rem solid #c7c7c7;
     width : 25rem;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
 }
 
-.navigation-icons{
+.navigationIcons{
     padding : 0.2rem 0.5rem 0.2rem 0.5rem;
-    color: mintcream;
 }
 
-#search-bar{
+#searchBar{
     margin: 0 15rem 0 25rem;
 }
 
 input{
     display: flex;
-    text-align: justify;
-    background-color: whitesmoke;
+    text-align: left;
+    background-color: #fafafa;
     border-style: none;
 }
 
@@ -78,16 +80,23 @@ input:focus{
     outline: none;
 }
 
-.navigation-buttons{
+#navigationButtons{
     display: inline-flex;
     flex-wrap: nowrap;
     flex-direction: row;
 }
 
-#icon{
+.icon{
     padding-left: 1.2rem;
     padding-right : 1.2rem;
     vertical-align: middle;
+    color:white;
+    cursor : pointer;
+    transition : 0.1s ease-in;
+}
+
+.icon:hover{
+    transform : scale(1.5, 1.5);
 }
 
 .material-icons{
@@ -101,7 +110,7 @@ input:focus{
 
 /* profile section(image, bio) */
 
-.profile{
+#profile{
     align-items: flex-start;
     display: flex;
     justify-content : center;
@@ -111,13 +120,13 @@ input:focus{
     flex-direction: row;
 }
 
-.profile-border{
-    border-bottom: 0.2rem solid red;
+.profileBorder{
+    border-bottom: 0.1rem solid black;
     width : 69%;
     margin : 0 auto;
 }
 /* dp info */
-.profile-picture{
+#profilePicture{
     border-radius: 50%;
     height: 15rem;
     width: 15rem;
@@ -126,7 +135,7 @@ input:focus{
 }
 
 
-.profile-content{
+#profileContent{
     display : inline-flex;
     flex-direction: column;
     flex-wrap : nowrap;
@@ -137,7 +146,7 @@ input:focus{
 
 /* name */
 
-.title-buttons{
+#titleButtons{
     display: flex;
     flex-direction: row;
     font-size : 3rem;
@@ -146,11 +155,11 @@ input:focus{
     align-items :center;
 }
 
-.follow:hover{
+#follow:hover{
     transform: scale(1.5);
 }
 
-.follow{
+#follow{
     font-size : 2rem;
     color : white;
     background-color: black;
@@ -162,7 +171,7 @@ input:focus{
     transition : 0.2s;
 
 }
-.caret{
+#caret{
     background-color: black;
     border-radius: 0.4rem;
     height : 4.2rem;
@@ -172,53 +181,97 @@ input:focus{
     transition : 0.4s;
 }
 
-.arrow-down{
+#arrowDown{
     color:white;
 }
 
-.caret:hover{
+#caret:hover{
     transform: scale(1.5); /* IE 9 */
 }
 
-.caret span{
+#caret span{
     vertical-align: middle;
 }
-.spread{
+#spread{
     vertical-align: middle;
     transition : 0.4s;
     font-size: 36px;
 }
 
-.spread:hover{
+#spread:hover{
     transform : scale(1.5);
 }
 
-.posts-follow-follower-info{
+#postsFollowFollowerInfo{
     display: inline;
     font-size: 2rem;
 }
 /* bio information */
 
-.bio{
+#bio{
     font-size: 2rem;
     line-height: 3rem;
 }
 /* image grid */
-.content{
+#content{
     display : block;
     width : 74%;
     margin : 0 auto;
 }
-.image-grid{
+
+#contentTabs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1rem;
+    gap : 4rem;
+    align-items: center;
+}
+
+.contentTab{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap : 0.5rem;
+    background-color: #fafafa;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight : lighter;
+}
+
+.contentTab:active{
+    opacity: 0.3;
+}
+
+#imageGrid{
     width : 100%;
     display: grid;
-    margin : 2rem auto;
+    margin : 0rem auto;
     justify-content: center;
     grid-template-columns: repeat(3, 23vw);
     grid-template-rows: repeat(4, 23vw);
     gap : 1rem;
 }
-.gallery-img {
+
+#videoGrid{
+    width : 100%;
+    display: none;
+    margin : 0rem auto;
+    justify-content: center;
+    grid-template-columns: repeat(3, 23vw);
+    grid-template-rows: repeat(4, 23vw);
+    gap : 1rem;
+}
+
+#imageGridIcon{
+
+}
+
+#videoGridIcon{
+
+}
+.gallerypost {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -228,7 +281,7 @@ input:focus{
     cursor : pointer;
 }
 
-.image-wrapper:hover .gallery-img{
+.postWrapper:hover .gallerypost:not(.videoGrid){
     opacity: 0.3;
     transform: scale(1.1, 1.1);
     animation : spin 0.5s ease-in 1;
@@ -241,12 +294,12 @@ input:focus{
     100% {transform : rotate(0deg);}
 }
 
-.image-wrapper:hover .likes-comments{
+.postWrapper:hover .likesComments{
     opacity: 1;
     z-index : 100;
 }
 
-.image-wrapper{
+.postWrapper{
     margin : 1.5rem 1.5rem;
     /* padding : 10px; */
     /* background-color: black; */
@@ -255,7 +308,7 @@ input:focus{
 
 }
 
-.likes-comments{
+.likesComments{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -271,6 +324,16 @@ input:focus{
     /* z-index : -1; */
     transition : 0.2s ease-in;
 }
-.likes-comments p{
+.likesComments p{
     padding: 0.5rem;
+}
+
+.likeIcon{
+    padding-left: 0.4rem;
+    padding-right : 0.4rem;
+}
+
+.commentIcon{
+    padding-left: 0.4rem;
+    padding-right : 0.4rem;
 }
