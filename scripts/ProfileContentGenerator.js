@@ -1,5 +1,5 @@
 import {ids} from './Registry.js';
-
+import { domEditElementById } from './DomLayer.js';
 const profileContentGenerator = (function(){
 
     return function loadUserInfo(userInfo){
@@ -7,15 +7,15 @@ const profileContentGenerator = (function(){
         const {name, numberOfPosts, following, followers, bio} = userInfo;
 
         //set user name
-        document.getElementById(ids.USER_NAME).innerHTML = name;
+        domEditElementById(ids.USER_NAME, name);
         // set number of posts
-        document.getElementById(ids.NUMBER_OF_POSTS).innerHTML = numberOfPosts;
+        domEditElementById(ids.NUMBER_OF_POSTS, numberOfPosts);
         //set following
-        document.getElementById(ids.FOLLOWING_COUNT).innerHTML = following;
+        domEditElementById(ids.FOLLOWING_COUNT, following);
         // set number of followers
-        document.getElementById(ids.FOLLOWERS_COUNT).innerHTML = followers;
+        domEditElementById(ids.FOLLOWERS_COUNT, followers);
 
-        document.getElementById(ids.USER_BIO).innerHTML = bio;
+        domEditElementById(ids.USER_BIO, bio);
     }
 })();
 

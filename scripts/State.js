@@ -54,7 +54,23 @@ const documentState = (function (){
             id : 11,
             liked : false,
             likes : 45
-        }],
+        },
+        {
+            id : 12,
+            liked : false,
+            likes : 45
+        },
+        {
+            id : 13,
+            liked : false,
+            likes : 45
+        },
+        {
+            id : 14,
+            liked : false,
+            likes : 45
+        },
+    ],
     following : false
     }
 
@@ -67,8 +83,9 @@ const documentState = (function (){
 
         toggleLike : function (postId){
             // fetch post from state
+            console.log(postId);
             const post = state.posts.filter((p)=>{
-                return p.id=postId;
+                return p.id==postId;
             })[0];
             // toggle like
             post.liked = !post.liked;
@@ -81,7 +98,7 @@ const documentState = (function (){
         getNumberOfLikes: function (postId){
             // fetch post from state
             const post = state.posts.filter((p)=>{
-                return p.id=postId;
+                return p.id==postId;
             })[0];
 
             return post.likes;

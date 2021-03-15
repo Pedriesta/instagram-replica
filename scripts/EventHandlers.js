@@ -4,8 +4,8 @@ import {documentState} from './State.js';
 let eventHandlers = (function(){
     return {
         toggleFollow : function (){
-        const followed = documentState.toggleFollow();
-        followed ? document.getElementById(ids.FOLLOW).innerHTML = "unfollow" : document.getElementById(ids.FOLLOW).innerHTML = "follow";
+            const followed = documentState.toggleFollow();
+            followed ? document.getElementById(ids.FOLLOW).innerHTML = "unfollow" : document.getElementById(ids.FOLLOW).innerHTML = "follow";
         
         },
 
@@ -13,7 +13,8 @@ let eventHandlers = (function(){
             let liked = documentState.toggleLike(id);
             let post = document.querySelector(`.postWrapper[data-id="${id}"]`)
             post.getElementsByClassName(classes.NUMBER_OF_LIKES)[0].innerHTML = documentState.getNumberOfLikes(id);
-            
+            // console.log(post);
+
             liked 
             ? post.getElementsByClassName(classes.LIKE_ICON)[0].setAttribute("src", icons.HEART_FILLED) :
             post.getElementsByClassName(classes.LIKE_ICON)[0].setAttribute("src", icons.HEART); 

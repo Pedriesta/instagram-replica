@@ -1,11 +1,13 @@
 import {ids} from './Registry.js';
+import { domCreateImage} from './DomLayer.js';
 
 const profilePictureGenerator = (function(){
     function createProfilePicture(imageUrl){
-        const profilePicture = document.createElement("img");
-        profilePicture.id = ids.PROFILE_PICTURE;
-        profilePicture.setAttribute("alt", "Profile Picture");
-        profilePicture.setAttribute("src", imageUrl);
+        const profilePicture = domCreateImage({
+            id : ids.PROFILE_PICTURE,
+            src : imageUrl,
+            alt : "Profile Picture"
+        });
     
         return profilePicture;
     }
