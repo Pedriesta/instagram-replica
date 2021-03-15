@@ -1,4 +1,4 @@
-let ids = {
+const ids = {
     PROFILE_PICTURE : "profilePicture",
     PROFILE_PICTURE_WRAPPER : "profilePictureWrapper",
     USER_NAME : "name",
@@ -10,10 +10,12 @@ let ids = {
     VIDEO_GRID : "videoGrid",
     FOLLOW : "follow",
     IMAGE_GRID_ICON : "imageGridIcon",
-    VIDEO_GRID_ICON : "videoGridIcon"
+    VIDEO_GRID_ICON : "videoGridIcon",
+    VIDEO_TAB : "videoTab",
+    IMAGE_TAB : "imageTab"
 }
 
-let classes = {
+const classes = {
     POST_WRAPPER : "postWrapper",
     GALLERY_POST : "gallerypost",
     LIKE_ICON : "likeIcon",
@@ -24,7 +26,7 @@ let classes = {
     LIKES_AND_COMMENTS : "likesComments",
 }
 
-let icons = {
+const icons = {
     HEART : "./icons/favorite_border-24px.svg",
     CHAT_BUBBLE : "./icons/chat_bubble-24px.svg",
     COMMENT : "./icons/chat_bubble-24px.svg",

@@ -4,7 +4,7 @@ import { profileContentGenerator} from './ProfileContentGenerator.js';
 import {constant} from './constants.js'
 
 //IIFE to make sure fillData doesn't go in the window scope
-(function fillData(){
+let fillData = (function (){
     fetch(constant.DATA_FILE).then(response => {
         return response.json();
     }).then(userProfileContentAndPosts => {
@@ -17,7 +17,7 @@ import {constant} from './constants.js'
 
         // load user info
 
-        let userInfo = {
+        const userInfo = {
             name : userProfileContentAndPosts.name,
             numberOfPosts : userProfileContentAndPosts.numberOfPosts,
             followers : userProfileContentAndPosts.followers,
@@ -27,7 +27,8 @@ import {constant} from './constants.js'
         
         profileContentGenerator(userInfo);
 
-        
     }).catch(err => {
     });
-})();
+});
+
+export{fillData};

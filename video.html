@@ -3,11 +3,11 @@
     <head>
         <title>Shutter</title>
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="video.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-        <script type="module" src="./scripts/Generator.js"></script>
         <script type="module">
             import {eventHandlers} from './scripts/EventHandlers.js';
-            window.eventHandlers = eventHandlers;
+            eventHandlers.loadVideo();
         </script>
     </head>
     <body>
@@ -39,7 +39,14 @@
         <!-- CONTENT -->
         <!-- profile section -->
         <div id="mainBody">
-            
+            <div class="container" id="contentWrapper">
+                <div id="videoWrapper">
+                    <video controls="controls" width="700px">
+                        <source id="videoSource" type="video/mp4"></source>
+                    </video>
+                </div>
+                <div id="videoInfoWrapper"></div>
+            </div>
         </div>
     </div>
     </body>

@@ -1,10 +1,10 @@
 import {ids} from './Registry.js';
 
-let profileContentGenerator = (function(){
+const profileContentGenerator = (function(){
 
     return function loadUserInfo(userInfo){
 
-        let {name, numberOfPosts, following, followers, bio} = userInfo;
+        const {name, numberOfPosts, following, followers, bio} = userInfo;
 
         //set user name
         document.getElementById(ids.USER_NAME).innerHTML = name;

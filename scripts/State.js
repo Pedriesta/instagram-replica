@@ -1,5 +1,5 @@
-let documentState = (function (){
-    let state = {
+const documentState = (function (){
+    const state = {
         posts : [{
             id : 1,
             liked : false,
@@ -67,7 +67,7 @@ let documentState = (function (){
 
         toggleLike : function (postId){
             // fetch post from state
-            let post = state.posts.filter((p)=>{
+            const post = state.posts.filter((p)=>{
                 return p.id=postId;
             })[0];
             // toggle like
@@ -80,7 +80,7 @@ let documentState = (function (){
 
         getNumberOfLikes: function (postId){
             // fetch post from state
-            let post = state.posts.filter((p)=>{
+            const post = state.posts.filter((p)=>{
                 return p.id=postId;
             })[0];
 

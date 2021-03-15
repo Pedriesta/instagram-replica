@@ -1,15 +1,13 @@
 import { ids, classes, icons } from './Registry.js';
 import { eventHandlers } from "./EventHandlers.js";
-let postsGridGenerator = (function(){
+
+const postsGridGenerator = (function(){
     function createImageWrapper(post){
-        let imageContainer = createDivWithPostID(post.id);
-        //like and comment icons
-        let iconWrapper = createLikeCommentIconWrapper(post);
+        const imageContainer = createDivWithPostID(post.id);
+        const iconWrapper = createLikeCommentIconWrapper(post);
 
-        //Image
-        let image = createImage(post.imageUrl, post.caption);
+        const image = createImage(post.imageUrl, post.caption);
 
-        //wrap everything in the final container
         imageContainer.appendChild(iconWrapper);
         imageContainer.appendChild(image);
 
@@ -17,7 +15,7 @@ let postsGridGenerator = (function(){
     }
 
     function createImage(url, caption){
-        let image = document.createElement("img");
+        const image = document.createElement("img");
         image.setAttribute("src", url);
         image.setAttribute("alt", toString(caption));
         image.classList.add(classes.GALLERY_POST);
@@ -25,30 +23,24 @@ let postsGridGenerator = (function(){
     }
 
     function createPostWrapper(post){
-        let postContainer = createDivWithPostID(post.id);
+        const postContainer = createDivWithPostID(post.id);
+        const anchorWrapper = document.createElement("a");
+        anchorWrapper.addEventListener("click", eventHandlers.changePageViewVideo.bind(null, post.videoUrl));
 
-        let anchorWrapper = document.createElement("a");
-        anchorWrapper.setAttribute("href", post.videoUrl);
-        // anchorWrapper.onclick = function(){
-        //     console.log("activated");
-            // window.open(post.videoUrl, 'targetWindow', 'width=500,height=500');
-        //     return false;
-        // }
+        const iconWrapper = createLikeCommentIconWrapper(post);
+        const video = createVideo(post.videoUrl);
 
-        anchorWrapper.onclick = eventHandlers.changePageViewVideo(post.videoUrl);
-        let iconWrapper = createLikeCommentIconWrapper(post);
-        let video = createVideo(post.videoUrl);
+        anchorWrapper.appendChild(video);
 
         postContainer.appendChild(iconWrapper);
-        anchorWrapper.appendChild(video);
         postContainer.appendChild(anchorWrapper);
 
         return postContainer;
     }
 
     function createVideo(url){
-        let video = document.createElement("video");
-        let source = document.createElement("source");
+        const video = document.createElement("video");
+        const source = document.createElement("source");
         source.setAttribute("src", url);
         source.setAttribute("type", "video/mp4");
         video.classList.add(classes.GALLERY_POST);
@@ -58,31 +50,49 @@ let postsGridGenerator = (function(){
     }
 
     function createDivWithPostID(id){
-        let postContainer = document.createElement("div");
+        const postContainer = document.createElement("div");
         postContainer.className = classes.POST_WRAPPER;
         postContainer.setAttribute("data-id", id);
         return postContainer;
     }
 
-    function createLikeCommentIconWrapper(post){
-        let likeIcon = document.createElement("img");
+    function createLikeIcon(id){
+        const likeIcon = document.createElement("img");
         likeIcon.classList.add(classes.LIKE_ICON, classes.ICON);
         likeIcon.setAttribute("src", icons.HEART);
-        likeIcon.addEventListener("click", eventHandlers.toggleLike.bind(null, event, post.id));
+        likeIcon.addEventListener("click", eventHandlers.toggleLike.bind(null, id));
+        return likeIcon;
+    }
 
-        let numberOfLikes = document.createElement("p");
-        numberOfLikes.innerHTML = post.likes;
-        numberOfLikes.classList.add(classes.NUMBER_OF_LIKES);
-
-        let commentIcon = document.createElement("img");
+    function createCommentIcon(id){
+        const commentIcon = document.createElement("img");
         commentIcon.classList.add(classes.COMMENT_ICON, classes.ICON);
         commentIcon.setAttribute("src", icons.COMMENT);
+        return commentIcon;
+    }
 
-        let numberOfComments = document.createElement("p");
+    function createNumberOfLikesParagraph(likes){
+        const numberOfLikes = document.createElement("p");
+        numberOfLikes.innerHTML = likes;
+        numberOfLikes.classList.add(classes.NUMBER_OF_LIKES);
+        return numberOfLikes;
+    }
+
+    function createNumberOfComments(comments){
+        const numberOfComments = document.createElement("p");
         numberOfComments.classList.add(classes.NUMBER_OF_COMMENTS);
-        numberOfComments.innerHTML = post.comments;
+        numberOfComments.innerHTML = comments;
+        return numberOfComments;
+    }
 
-        let iconWrapper = document.createElement("div");
+    function createLikeCommentIconWrapper(post){
+        const likeIcon = createLikeIcon(post.id);
+        const numberOfLikes = createNumberOfLikesParagraph(post.likes);
+
+        const commentIcon = createCommentIcon(post.id);
+        const numberOfComments = createNumberOfComments(post.likes);
+
+        const iconWrapper = document.createElement("div");
         iconWrapper.classList.add(classes.LIKES_AND_COMMENTS);
 
         iconWrapper.appendChild(likeIcon);
@@ -96,17 +106,14 @@ let postsGridGenerator = (function(){
     return {
         loadImages :function (images){
             images.forEach((image, i) => {
-                // image container
-                let imageContainer = createImageWrapper(image);
-                //finally add to the document
+                const imageContainer = createImageWrapper(image);
                 document.getElementById(ids.IMAGE_GRID).appendChild(imageContainer);
             });
         },
 
         loadVideos : function (videos){
             videos.forEach((post, i) => {
-                console.log(post);
-                let videoContainer = createPostWrapper(post);
+                const videoContainer = createPostWrapper(post);
                 document.getElementById(ids.VIDEO_GRID).appendChild(videoContainer);
             });
         }
