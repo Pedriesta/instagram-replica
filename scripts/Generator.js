@@ -4,18 +4,15 @@ import { profileContentGenerator} from './ProfileContentGenerator.js';
 import {constant} from './constants.js'
 
 //IIFE to make sure fillData doesn't go in the window scope
-let fillData = (function (){
-    fetch(constant.DATA_FILE).then(response => {
-        return response.json();
-    }).then(userProfileContentAndPosts => {
+let fillData = (async function (){
+    try{
+        let userProfileContentAndPosts = await fetch(constant.DATA_FILE);
+        userProfileContentAndPosts = await userProfileContentAndPosts.json();
+
         userProfileContentAndPosts.bio = constant.BIO;
-        // load images on default, load videos only when called upon
         postsGridGenerator.loadImages(userProfileContentAndPosts.posts.images);
         postsGridGenerator.loadVideos(userProfileContentAndPosts.posts.videos);
-        // load profile picture
         profilePictureGenerator(userProfileContentAndPosts.profilePicture);
-
-        // load user info
 
         const userInfo = {
             name : userProfileContentAndPosts.name,
@@ -24,11 +21,12 @@ let fillData = (function (){
             following : userProfileContentAndPosts.following,
             bio : userProfileContentAndPosts.bio
         }
-        
         profileContentGenerator(userInfo);
+    }
+    catch(error){
+        console.log(error);
+    }
 
-    }).catch(err => {
-    });
 });
 
 export{fillData};
