@@ -14,7 +14,7 @@ const profilePictureGenerator = (function(){
 
     return function loadProfilePicture(imageUrl){
         const profilePicture = createProfilePicture(imageUrl);
-        document.getElementById(ids.PROFILE_PICTURE_WRAPPER).appendChild(profilePicture);
+        domAppendElementById(ids.PROFILE_PICTURE_WRAPPER, profilePicture);
     }
 })();
 

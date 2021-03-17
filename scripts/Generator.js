@@ -10,6 +10,7 @@ let fillData = (async function (){
         userProfileContentAndPosts = await userProfileContentAndPosts.json();
 
         userProfileContentAndPosts.bio = constant.BIO;
+
         postsGridGenerator.loadImages(userProfileContentAndPosts.posts.images);
         postsGridGenerator.loadVideos(userProfileContentAndPosts.posts.videos);
         profilePictureGenerator(userProfileContentAndPosts.profilePicture);

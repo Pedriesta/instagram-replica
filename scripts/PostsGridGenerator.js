@@ -44,13 +44,6 @@ const postsGridGenerator = (function(){
     }
 
     function createVideo(url){
-        // const video = document.createElement("video");
-        // const source = document.createElement("source");
-        // source.setAttribute("src", url);
-        // source.setAttribute("type", "video/mp4");
-        // video.classList.add(classes.GALLERY_POST);
-        // video.appendChild(source);
-
         const video = domCreateVideo({
             classes : [classes.GALLERY_POST],
             src : url,
