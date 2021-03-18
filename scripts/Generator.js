@@ -1,26 +1,23 @@
 import {postsGridGenerator} from './PostsGridGenerator.js';
 import {profilePictureGenerator} from './ProfilePictureGenerator.js';
 import { profileContentGenerator} from './ProfileContentGenerator.js';
-import {constant} from './constants.js'
+import {otherConstants} from './Registry.js'
+import {model} from './Model.js';
 
 //IIFE to make sure fillData doesn't go in the window scope
 let fillData = (async function (){
     try{
-        let userProfileContentAndPosts = await fetch(constant.DATA_FILE);
-        userProfileContentAndPosts = await userProfileContentAndPosts.json();
-
-        userProfileContentAndPosts.bio = constant.BIO;
-
-        postsGridGenerator.loadImages(userProfileContentAndPosts.posts.images);
-        postsGridGenerator.loadVideos(userProfileContentAndPosts.posts.videos);
-        profilePictureGenerator(userProfileContentAndPosts.profilePicture);
+        await model.init();
+        postsGridGenerator.loadImages(model.getImages());
+        postsGridGenerator.loadVideos(model.getVideos());
+        profilePictureGenerator(model.getProfilePicture());
 
         const userInfo = {
-            name : userProfileContentAndPosts.name,
-            numberOfPosts : userProfileContentAndPosts.numberOfPosts,
-            followers : userProfileContentAndPosts.followers,
-            following : userProfileContentAndPosts.following,
-            bio : userProfileContentAndPosts.bio
+            name : model.getName(),
+            numberOfPosts : model.getNumberOfPosts(),
+            followers : model.getNumberOfFollowers(),
+            following : model.getNumberOfFollowing(),
+            bio : model.getBio(),
         }
         profileContentGenerator(userInfo);
     }

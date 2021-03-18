@@ -3,6 +3,7 @@
 }
 #contentWrapper{
     padding-top : 5rem;
+    margin-top : 5rem;
     display : flex;
     /* max-width: 60%; */
     justify-content: center;

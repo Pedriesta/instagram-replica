@@ -8,7 +8,7 @@ const ids = {
     USER_BIO : "bio",
     IMAGE_GRID : "imageGrid",
     VIDEO_GRID : "videoGrid",
-    FOLLOW : "follow",
+    FOLLOW_BUTTON : "follow",
     IMAGE_GRID_ICON : "imageGridIcon",
     VIDEO_GRID_ICON : "videoGridIcon",
     VIDEO_TAB : "videoTab",
@@ -37,4 +37,10 @@ const icons = {
     GRID_OFF : "./icons/grid_off-24px.svg"
 }
 
-export {ids, classes, icons};
+const otherConstants = {
+    DATA_FILE : "./scripts/Data.json",
+    BIO : "Tekion".bold() + "<br>" + "\nSoftware Company<br>".italics() + "One platform that seamlessly connects your entire business."
+}
+
+
+export {ids, classes, icons, otherConstants};

@@ -5,10 +5,6 @@
         <link rel="stylesheet" href="index.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
         <script type="module" src="./scripts/index.js"></script>
-        <script type="module">
-            import {eventHandlers} from './scripts/EventHandlers.js';
-            window.eventHandlers = eventHandlers;
-        </script>
     </head>
     <body>
     <!-- Main content -->
@@ -47,7 +43,7 @@
                     <div id="titleButtons">
                         <span id="name"></span>
                         <span>
-                            <div id="follow" onclick="eventHandlers.toggleFollow()">follow</div>
+                            <div id="follow">follow</div>
                         </span>
                         <div id="caret">
                             <span class="material-icons" id="arrowDown">keyboard_arrow_down</span>
@@ -70,8 +66,8 @@
             <!-- images -->
             <div id="content">
                 <div id="contentTabs">
-                    <button class="contentTab"  id="imageTab" onclick="eventHandlers.viewImages()"><img src="./icons/grid_on-24px.svg" id="imageGridIcon">Images</button>
-                    <button class="contentTab" id="videoTab" onclick="eventHandlers.viewVideos()"><img src="./icons/tv_off-24px.svg" id="videoGridIcon">Videos</button>
+                    <button class="contentTab"  id="imageTab"><img src="./icons/grid_on-24px.svg" id="imageGridIcon">Images</button>
+                    <button class="contentTab" id="videoTab"><img src="./icons/tv_off-24px.svg" id="videoGridIcon">Videos</button>
                 </div>
                 <div id="imageGrid"> 
                 </div>

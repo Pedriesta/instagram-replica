@@ -1,5 +1,5 @@
 import {ids} from './Registry.js';
-import { domCreateImage} from './DomLayer.js';
+import { domCreateImage, domAppendElementById} from './DomLayer.js';
 
 const profilePictureGenerator = (function(){
     function createProfilePicture(imageUrl){

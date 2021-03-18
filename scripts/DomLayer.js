@@ -46,8 +46,22 @@ function domCreateDiv({id=null, classes=null, children}){
 
     children.forEach((child) => {
         div.appendChild(child);
-    })
+    });
     return div;
+}
+
+function domCreateAnchor({id=null, classes=null, children=null, href=null}){
+    const anchor = document.createElement("a");
+    if(id) a.id = id;
+
+    if(classes) a.classList.add(...classes);
+
+    children.forEach((child) => {
+        anchor.appendChild(child);
+    });
+
+    anchor.setAttribute("href", href);
+    return anchor;
 }
 
 function domEditElementById(id, content){
@@ -58,5 +72,10 @@ function domAppendElementById(id, child){
     document.getElementById(id).appendChild(child);
 }
 
+function domGetElementById(id){
+    return document.getElementById(id);
+}
 
-export{domCreateImage, domCreateParagraph, domCreateDiv, domEditElementById, domAppendElementById, domCreateVideo};
+
+export{domCreateAnchor, domCreateImage, domCreateParagraph, domCreateDiv, domEditElementById, domAppendElementById, domCreateVideo,
+    domGetElementById};

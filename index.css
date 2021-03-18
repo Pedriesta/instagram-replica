@@ -225,7 +225,7 @@ input:focus{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 0rem;
     gap : 4rem;
     align-items: center;
 }
@@ -235,6 +235,7 @@ input:focus{
     justify-content: center;
     align-items: center;
     gap : 0.5rem;
+    padding-top: 1rem;
     background-color: #fafafa;
     border: none;
     outline: none;

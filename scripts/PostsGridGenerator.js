@@ -1,6 +1,6 @@
 import { ids, classes, icons } from './Registry.js';
-import { eventHandlers } from "./EventHandlers.js";
-import { domCreateImage , domCreateParagraph, domCreateDiv, domAppendElementById, domCreateVideo} from './DomLayer.js';
+import { eventHandlers } from "./ControllerEventHandler.js";
+import { domCreateAnchor, domCreateImage , domCreateParagraph, domCreateDiv, domAppendElementById, domCreateVideo, domGetElementById} from './DomLayer.js';
 
 const postsGridGenerator = (function(){
     function createImageWrapper(post){
@@ -26,13 +26,12 @@ const postsGridGenerator = (function(){
     }
 
     function createVideoWrapper(post){
-        const anchorWrapper = document.createElement("a");
-        anchorWrapper.addEventListener("click", eventHandlers.changePageViewVideo.bind(null, post.videoUrl));
-
         const iconWrapper = createLikeCommentIconWrapper(post);
         const video = createVideo(post.videoUrl);
-
-        anchorWrapper.appendChild(video);
+        const anchorWrapper = domCreateAnchor({
+            children : [video]
+        })
+        anchorWrapper.addEventListener("click", eventHandlers.changePageViewVideo.bind(null, post.videoUrl));
 
         const postContainer = domCreateDiv({
             classes : [classes.POST_WRAPPER],
@@ -99,6 +98,14 @@ const postsGridGenerator = (function(){
 
         return iconWrapper;
     }
+
+    // attaching event listeners to follow button
+    (function attachEventListenersStaticElements(){
+        domGetElementById(ids.FOLLOW_BUTTON).addEventListener("click", eventHandlers.toggleFollow.bind(null));
+        // attach event listeners to image and video tabs
+        domGetElementById(ids.IMAGE_TAB).addEventListener("click", eventHandlers.viewImages.bind(null));
+        domGetElementById(ids.VIDEO_TAB).addEventListener("click", eventHandlers.viewVideos.bind(null));
+    })();
 
     return {
         loadImages :function (images){
