@@ -1,5 +1,4 @@
 import { ids, classes, icons } from './Registry.js';
-// import { eventHandlers } from "./ControllerEventHandler.js";
 import { domCreateAnchor, domCreateImage , domCreateParagraph, domCreateDiv, domAppendElementById, domCreateVideo, domGetElementById} from './DomLayer.js';
 
 const postsGridGenerator = (function(){
