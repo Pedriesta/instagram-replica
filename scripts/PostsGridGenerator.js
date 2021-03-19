@@ -1,10 +1,10 @@
 import { ids, classes, icons } from './Registry.js';
-import { eventHandlers } from "./ControllerEventHandler.js";
+// import { eventHandlers } from "./ControllerEventHandler.js";
 import { domCreateAnchor, domCreateImage , domCreateParagraph, domCreateDiv, domAppendElementById, domCreateVideo, domGetElementById} from './DomLayer.js';
 
 const postsGridGenerator = (function(){
-    function createImageWrapper(post){
-        const iconWrapper = createLikeCommentIconWrapper(post);
+    function createImageWrapper(post, controllerEventHandlers){
+        const iconWrapper = createLikeCommentIconWrapper(post, controllerEventHandlers.toggleLike);
 
         const image = createImage(post.imageUrl, post.caption);
 
@@ -25,13 +25,13 @@ const postsGridGenerator = (function(){
         });
     }
 
-    function createVideoWrapper(post){
-        const iconWrapper = createLikeCommentIconWrapper(post);
+    function createVideoWrapper(post, controllerEventHandlers){
+        const iconWrapper = createLikeCommentIconWrapper(post, controllerEventHandlers.toggleLike);
         const video = createVideo(post.videoUrl);
         const anchorWrapper = domCreateAnchor({
             children : [video]
         })
-        anchorWrapper.addEventListener("click", eventHandlers.changePageViewVideo.bind(null, post.videoUrl));
+        anchorWrapper.addEventListener("click", controllerEventHandlers.changePageViewVideo.bind(null, post.videoUrl));
 
         const postContainer = domCreateDiv({
             classes : [classes.POST_WRAPPER],
@@ -52,13 +52,13 @@ const postsGridGenerator = (function(){
         return video;
     }
 
-    function createLikeIcon(id){
+    function createLikeIcon(id, toggleLikeHandler){
         const likeIcon = domCreateImage({
             classes : [classes.LIKE_ICON, classes.ICON],
             src : icons.HEART,
             alt : "Like"
         });
-        likeIcon.addEventListener("click", eventHandlers.toggleLike.bind(null, id));
+        likeIcon.addEventListener("click", toggleLikeHandler.bind(null, id));
         return likeIcon;
     }
 
@@ -84,8 +84,8 @@ const postsGridGenerator = (function(){
         });
     }
 
-    function createLikeCommentIconWrapper(post){
-        const likeIcon = createLikeIcon(post.id);
+    function createLikeCommentIconWrapper(post, toggleLikeHandler){
+        const likeIcon = createLikeIcon(post.id, toggleLikeHandler);
         const numberOfLikes = createNumberOfLikesParagraph(post.likes);
 
         const commentIcon = createCommentIcon(post.id);
@@ -100,24 +100,18 @@ const postsGridGenerator = (function(){
     }
 
     // attaching event listeners to follow button
-    (function attachEventListenersStaticElements(){
-        domGetElementById(ids.FOLLOW_BUTTON).addEventListener("click", eventHandlers.toggleFollow.bind(null));
-        // attach event listeners to image and video tabs
-        domGetElementById(ids.IMAGE_TAB).addEventListener("click", eventHandlers.viewImages.bind(null));
-        domGetElementById(ids.VIDEO_TAB).addEventListener("click", eventHandlers.viewVideos.bind(null));
-    })();
 
     return {
-        loadImages :function (images){
+        loadImages :function (images, controllerEventHandlers){
             images.forEach((image, i) => {
-                const imageContainer = createImageWrapper(image);
+                const imageContainer = createImageWrapper(image, controllerEventHandlers);
                 domAppendElementById(ids.IMAGE_GRID, imageContainer);
             });
         },
 
-        loadVideos : function (videos){
+        loadVideos : function (videos, controllerEventHandlers){
             videos.forEach((post, i) => {
-                const videoContainer = createVideoWrapper(post);
+                const videoContainer = createVideoWrapper(post, controllerEventHandlers);
                 domAppendElementById(ids.VIDEO_GRID, videoContainer);
             });
         }

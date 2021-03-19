@@ -64,8 +64,9 @@ function domCreateAnchor({id=null, classes=null, children=null, href=null}){
     return anchor;
 }
 
-function domEditElementById(id, content){
-    document.getElementById(id).innerHTML = content;
+function domEditElementById({id, content=null, style=null}){
+    if(content) document.getElementById(id).innerHTML = content;
+    if(style) Object.assign(document.getElementById(id).style , style);
 }
 
 function domAppendElementById(id, child){
@@ -76,6 +77,17 @@ function domGetElementById(id){
     return document.getElementById(id);
 }
 
+function domGetElementsByClass({elementToQuery=null, className}){
+    let queryResults = []
+    if(elementToQuery) queryResults = elementToQuery.getElementsByClassName(className);
+    else queryResults = document.getElementsByClassName(className);
+    return queryResults;
+}
+
+function domQuerySelector(query){
+    return document.querySelector(query);
+}
+
 
 export{domCreateAnchor, domCreateImage, domCreateParagraph, domCreateDiv, domEditElementById, domAppendElementById, domCreateVideo,
-    domGetElementById};
+    domGetElementById, domQuerySelector, domGetElementsByClass};

@@ -81,5 +81,5 @@ class Model{
         return this.state.profilePicture;
     }
 }
-const model = new Model();
-export{model};
+// const model = new Model();
+export{Model};
