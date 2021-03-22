@@ -1,5 +1,4 @@
 import {viewEventHandlers} from './ViewEventHandler.js'
-console.log("adajhdba");
 import { profileContentGenerator} from './Components/ProfileContentGenerator.js';
 import {domGetElementById} from './DomLayer.js';
 import {ids} from '../Registry.js';

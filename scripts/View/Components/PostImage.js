@@ -3,8 +3,8 @@ import { domCreateImage , domCreateDiv} from '../DomLayer.js';
 import { classes} from '../../Registry.js';
 
 class ImageWrapper{
-    constructor(post, controllerEventHandlers){
-        this.iconWrapper = new LikeCommentIconWrapper(post, controllerEventHandlers.toggleLike);
+    constructor(post){
+        this.iconWrapper = new LikeCommentIconWrapper(post);
 
         this.image = createImage(post.imageUrl, post.caption);
     

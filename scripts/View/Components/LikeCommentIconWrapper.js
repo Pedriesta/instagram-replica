@@ -7,8 +7,8 @@ import { classes} from '../../Registry.js';
 
 
 class LikeCommentIconWrapper{
-    constructor(post, toggleLikeHandler){
-        this.likeIcon = new LikeIcon(post.id, toggleLikeHandler);
+    constructor(post){
+        this.likeIcon = new LikeIcon(post.id);
         this.numberOfLikes = new NumberOfLikesParagraph(post.likes);
 
         this.commentIcon = new CommentIcon(post.id);
