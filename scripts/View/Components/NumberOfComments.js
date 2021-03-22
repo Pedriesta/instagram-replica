@@ -2,11 +2,14 @@ import { domCreateParagraph} from '../DomLayer.js';
 import { classes} from '../../Registry.js';
 
 
-function createNumberOfCommentsParagraph(comments){
-    return domCreateParagraph({
-        classes : [classes.NUMBER_OF_COMMENTS],
-        text : comments
-    });
+class NumberOfCommentsParagraph{
+    constructor(comments){
+        const numberOfComments = domCreateParagraph({
+            classes : [classes.NUMBER_OF_COMMENTS],
+            text : comments
+        });
+        return numberOfComments;
+    }
 }
 
-export{createNumberOfCommentsParagraph};
+export{NumberOfCommentsParagraph};

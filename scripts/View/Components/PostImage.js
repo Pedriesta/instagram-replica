@@ -1,19 +1,20 @@
-import {createLikeCommentIconWrapper} from './LikeCommentIconWrapper.js';
+import {LikeCommentIconWrapper} from './LikeCommentIconWrapper.js';
 import { domCreateImage , domCreateDiv} from '../DomLayer.js';
 import { classes} from '../../Registry.js';
 
+class ImageWrapper{
+    constructor(post, controllerEventHandlers){
+        this.iconWrapper = new LikeCommentIconWrapper(post, controllerEventHandlers.toggleLike);
 
-function createImageWrapper(post, controllerEventHandlers){
-    const iconWrapper = createLikeCommentIconWrapper(post, controllerEventHandlers.toggleLike);
-
-    const image = createImage(post.imageUrl, post.caption);
-
-    const imageContainer = domCreateDiv({
-        classes : [classes.POST_WRAPPER],
-        children : [iconWrapper, image],
-    });
-    imageContainer.setAttribute("data-id", post.id);
-    return imageContainer;
+        this.image = createImage(post.imageUrl, post.caption);
+    
+        const imageWrapper = domCreateDiv({
+            classes : [classes.POST_WRAPPER],
+            children : [this.iconWrapper, this.image],
+        });
+        imageWrapper.setAttribute("data-id", post.id);
+        return imageWrapper;
+    }
 }
 
 function createImage(url, caption){
@@ -24,4 +25,4 @@ function createImage(url, caption){
     });
 }
 
-export{createImageWrapper};
+export{ImageWrapper};

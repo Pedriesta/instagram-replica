@@ -1,5 +1,5 @@
-import {ids} from '../Registry.js';
-import { domEditElementById } from './DomLayer.js';
+import {ids} from '../../Registry.js';
+import { domEditElementById } from '../DomLayer.js';
 const profileContentGenerator = (function(){
 
     return function loadUserInfo(userInfo){

@@ -1,24 +1,26 @@
-import {createLikeCommentIconWrapper} from './LikeCommentIconWrapper.js';
+import {LikeCommentIconWrapper} from './LikeCommentIconWrapper.js';
 import { classes} from '../../Registry.js';
 import { domCreateAnchor, domCreateDiv, domCreateVideo} from '../DomLayer.js';
 
-function createVideoWrapper(post, controllerEventHandlers){
-    const iconWrapper = createLikeCommentIconWrapper(post, controllerEventHandlers.toggleLike);
-    const video = createVideo(post.videoUrl);
-    const anchorWrapper = domCreateAnchor({
-        children : [video]
-    })
-    anchorWrapper.addEventListener("click", ()=>{
-        controllerEventHandlers.changePageViewVideo(post.videoUrl)
-    });
+class VideoWrapper{
+    constructor(post, controllerEventHandlers){
+        this.iconWrapper = new LikeCommentIconWrapper(post, controllerEventHandlers.toggleLike);
+        this.video = createVideo(post.videoUrl);
+        this.anchorWrapper = domCreateAnchor({
+            children : [this.video]
+        })
+        this.anchorWrapper.addEventListener("click", ()=>{
+            controllerEventHandlers.changePageViewVideo(post.videoUrl)
+        });
 
-    const postContainer = domCreateDiv({
-        classes : [classes.POST_WRAPPER],
-        children : [iconWrapper, anchorWrapper]
-    });
-    postContainer.setAttribute("data-id", post.id);
+        const videoWrapper = domCreateDiv({
+            classes : [classes.POST_WRAPPER],
+            children : [this.iconWrapper, this.anchorWrapper]
+        });
+        videoWrapper.setAttribute("data-id", post.id);
 
-    return postContainer;
+        return videoWrapper;
+    }
 }
 
 function createVideo(url){
@@ -31,4 +33,4 @@ function createVideo(url){
     return video;
 }
 
-export{createVideoWrapper};
+export{VideoWrapper};
