@@ -101,6 +101,14 @@ input:focus{
     transition : 0.1s ease-in;
 }
 
+#avatar{
+    height: 24px;
+    width : 24px;
+    border-radius: 50%;
+    padding-top : 0.1rem;
+    align-self: baseline;
+}
+
 .icon:hover{
     transform : scale(1.5, 1.5);
 }

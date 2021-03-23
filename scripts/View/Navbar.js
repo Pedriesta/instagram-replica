@@ -8,7 +8,7 @@ class NavbarView{
     // Main Render Method
     render(data){
         this.parent = domGetElementById("navbar");
-        this.navbar = new Navbar();
+        this.navbar = new Navbar(data.getProfilePicture());
         this.parent.appendChild(this.navbar);
     }
 

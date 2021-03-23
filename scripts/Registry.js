@@ -12,7 +12,8 @@ const ids = {
     IMAGE_GRID_ICON : "imageGridIcon",
     VIDEO_GRID_ICON : "videoGridIcon",
     VIDEO_TAB : "videoTab",
-    IMAGE_TAB : "imageTab"
+    IMAGE_TAB : "imageTab",
+    AVATAR : "avatar"
 }
 
 const classes = {
