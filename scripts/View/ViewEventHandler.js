@@ -123,6 +123,7 @@ let viewEventHandlers = (function(){
         loadVideo : function(){
             let videoUrl = sessionStorage.getItem("recentVideoUrl");
             domGetElementById("videoSource").setAttribute("src", videoUrl);
+            console.log(videoUrl);
             document.querySelector("video").load();
         }
     };

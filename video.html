@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="video.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
         <script type="module">
-            import {eventHandlers} from './scripts/EventHandlers.js';
-            eventHandlers.loadVideo();
+            import {viewEventHandlers} from './scripts/View/ViewEventHandler.js';
+            viewEventHandlers.loadVideo();
         </script>
     </head>
     <body>
@@ -30,7 +30,6 @@
                         <div class="icon"><img src="./icons/favorite_border-24px.svg" class="navigationIcons"></div>
                         <div class="icon"><img src="./icons/perm_identity-24px.svg" class="navigationIcons"></div>
                     </div>
-                </ul>
             </nav>
         </header>
         
@@ -41,12 +40,15 @@
         <div id="mainBody">
             <div class="container" id="contentWrapper">
                 <div id="videoWrapper">
-                    <video controls="controls" width="700px">
+                    <video controls="controls" width="350px" height="600px">
                         <source id="videoSource" type="video/mp4"></source>
                     </video>
                 </div>
                 <div id="videoInfoWrapper">
-                    Tekion Corp
+                    <div id="userInfoFollowBtn"></div>
+                    <div id="comments"></div>
+                    <div id="likeCommentShareInfo"></div>
+                    <div id="addComment"></div>
                 </div>
             </div>
         </div>

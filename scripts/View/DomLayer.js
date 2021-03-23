@@ -38,15 +38,19 @@ function domCreateParagraph({id=null, classes=null, text}){
     return para;
 }
 
-function domCreateDiv({id=null, classes=null, children}){
+function domCreateDiv({id=null, classes=null, children=null, innerHTML=null}){
     const div = document.createElement("div");
     if(id) div.id = id;
 
     if(classes) div.classList.add(...classes);
 
-    children.forEach((child) => {
+    if(children){
+        children.forEach((child) => {
         div.appendChild(child);
-    });
+        });
+    }
+
+    if(innerHTML) div.innerHTML = innerHTML
     return div;
 }
 

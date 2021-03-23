@@ -34,7 +34,10 @@ const icons = {
     TV_ON : "./icons/tv-24px.svg",
     TV_OFF : "./icons/tv_off-24px.svg",
     GRID_ON : "./icons/grid_on-24px.svg",
-    GRID_OFF : "./icons/grid_off-24px.svg"
+    GRID_OFF : "./icons/grid_off-24px.svg",
+    HOME : "./icons/home-24px.svg",
+    USER : "./icons/perm_identity-24px.svg",
+    EXPLORE : "./icons/explore-24px.svg"
 }
 
 const otherConstants = {

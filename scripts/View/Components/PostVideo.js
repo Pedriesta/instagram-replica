@@ -3,13 +3,14 @@ import { classes} from '../../Registry.js';
 import { domCreateAnchor, domCreateDiv, domCreateVideo} from '../DomLayer.js';
 
 class VideoWrapper{
-    constructor(post){
+    constructor(post, controllerEventHandlers){
         this.iconWrapper = new LikeCommentIconWrapper(post);
         this.video = createVideo(post.videoUrl);
         this.anchorWrapper = domCreateAnchor({
             children : [this.video]
         })
-        this.anchorWrapper.addEventListener("click", ()=>{
+        this.anchorWrapper.addEventListener("click", (e)=>{
+            e.preventDefault();
             controllerEventHandlers.changePageViewVideo(post.videoUrl)
         });
 

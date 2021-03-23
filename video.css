@@ -1,23 +1,24 @@
 #mainBody{
-    width: 50%;
+    /* width: 50%; */
 }
 #contentWrapper{
-    padding-top : 5rem;
-    margin-top : 5rem;
+    padding : 5rem 0 0 0;
+    margin : 5rem 0 0 0;
     display : flex;
+    /* height : 60rem; */
+    /* width : 70rem; */
     /* max-width: 60%; */
     justify-content: center;
     align-items: center;
-    width: fit-content;
 }
 
 #videoWrapper{
     display: block;
-    /* display: block; */
-    /* padding : 0 500px */
+    background-color: black;
 }
 
 #videoInfoWrapper{
+    align-self: flex-start;
     /* max-width : 50%; */
 }
 
@@ -26,6 +27,7 @@ video #videoSource{
     overflow: hidden;
     position: absolute;
     top: 0; left: 0;
+    background: black;
     /* max-width: 50%; */
-    height: auto;
+    /* height: auto; */
 }

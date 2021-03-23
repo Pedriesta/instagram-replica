@@ -35,9 +35,9 @@ class VideoGrid{
             controllerEventHandlers.toggleLike(id);
         });
     }
-    loadVideos(videos){
+    loadVideos(videos, controllerEventHandlers){
         videos.forEach((video, i) => {
-            const videoContainer = new VideoWrapper(video);
+            const videoContainer = new VideoWrapper(video, controllerEventHandlers);
             this.videoGrid.appendChild(videoContainer);
         });
     }
