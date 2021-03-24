@@ -1,5 +1,5 @@
 import {ids} from '../../Registry.js';
-import { domCreateImage, domAppendElementById} from '../DomLayer.js';
+import { domCreateImage, domGetElementById} from '../DomLayer.js';
 
 class ProfilePicture{
     constructor(imageUrl){
@@ -8,7 +8,8 @@ class ProfilePicture{
             src : imageUrl,
             alt : "Profile Picture"
         });
-        domAppendElementById(ids.PROFILE_PICTURE_WRAPPER, this.profilePicture);
+        domGetElementById(ids.PROFILE_PICTURE_WRAPPER).appendChild(this.profilePicture);
+        console.log(domGetElementById(ids.PROFILE_PICTURE_WRAPPER));
         return this.profilePicture;
     }
 }

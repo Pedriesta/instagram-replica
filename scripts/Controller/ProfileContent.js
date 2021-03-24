@@ -5,19 +5,17 @@ class ProfileContentController{
     }
 
     async init(){
-        this.view.controllerEventHandler = {
+        this.view.controllerEventHandlers = {
             toggleFollow : this.toggleFollow,
         }
 
         await this.model.init();
         this.view.render(this.model.data);
-        this.view.attachEventListenersStaticElements();
     }
 
     toggleFollow = () => {
         const isFollowed = this.model.toggleFollow();
-        this.view.editFollowerCount(this.model.data.getNumberOfFollowers());
-        this.view.toggleFollow(isFollowed);
+        this.view.render(this.model.data);
     }
 
 }

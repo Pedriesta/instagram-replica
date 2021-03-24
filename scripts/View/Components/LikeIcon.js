@@ -4,8 +4,11 @@ import { classes, icons } from '../../Registry.js';
 class LikeIcon{
     constructor(isLiked){
         let src = "";
-        isLiked ? src=icons.HEART_FILLED : src=icons.HEART;
-
+        if(isLiked)
+        src = icons.HEART_FILLED
+        else
+        src = icons.HEART;
+        // console.log(src);
         const likeIcon = domCreateImage({
             classes : [classes.LIKE_ICON, classes.ICON],
             src : src,

@@ -20,6 +20,6 @@ import { NavbarController } from './Controller/Navbar.js';
     let profilePictureApp = new ProfilePictureController(new ProfilePictureModel(), new ProfilePictureView());
     navBarApp.init();
     postApp.init();
-    profileContentApp.init();
     profilePictureApp.init();
+    profileContentApp.init();
 })();

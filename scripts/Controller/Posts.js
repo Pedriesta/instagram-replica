@@ -14,6 +14,7 @@ class PostsController{
         }
 
         await this.model.init();
+        console.log(this.model.state);
         this.view.render(this.model.data);
         this.view.attachEventListenersStaticElements();
     }
@@ -21,22 +22,17 @@ class PostsController{
     toggleLike = (id) => {
         const liked = this.model.toggleLike(id);
         this.view.render(this.model.data);
-        this.view.attachEventListenersStaticElements();
-        // this.view.editLikeCount(id, this.model.data.getNumberOfLikes(id));
-        // this.view.toggleLike(id, liked);
     }
 
     viewImages = () => {
+        this.model.switchToImageGrid();
         this.view.render(this.model.data);
-        this.view.attachEventListenersStaticElements();
-        // set videos display to none
-        // this.view.viewImages();
     }
 
     viewVideos = () => {
+        this.model.switchToVideoGrid();
         this.view.render(this.model.data);
-        this.view.attachEventListenersStaticElements();
-        // this.view.viewVideos();
+
     }
 
     changePageViewVideo = (videoUrl) => {

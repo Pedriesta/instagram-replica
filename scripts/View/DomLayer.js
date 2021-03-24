@@ -98,6 +98,14 @@ function domQuerySelector(query){
     return document.querySelector(query);
 }
 
+function domCreateSpan({id=null, classes=null, content=null}){
+    const span = document.createElement("span");
+    if(id) span.id = id;
+    if(classes) span.classList.add(...classes);
+    span.innerHTML = content;
+    return span;
+}
+
 
 export{domCreateAnchor, domCreateImage, domCreateParagraph, domCreateDiv, domEditElementById, domAppendElementById, domCreateVideo,
-    domGetElementById, domQuerySelector, domGetElementsByClass};
+    domGetElementById, domQuerySelector, domGetElementsByClass, domCreateSpan};

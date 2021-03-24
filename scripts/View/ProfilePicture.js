@@ -1,5 +1,5 @@
 import {ProfilePicture} from './Components/ProfilePicture.js';
-
+import {domGetElementById} from './DomLayer.js';
 class ProfilePictureView{
     constructor(){
         this.controllerEventHandlers = {};

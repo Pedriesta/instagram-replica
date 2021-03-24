@@ -167,8 +167,12 @@ input:focus{
 
 /* name */
 
+#name{
+    display: inline-flex;
+}
+
 #titleButtons{
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     font-size : 3rem;
     gap : 1rem;
@@ -274,7 +278,6 @@ input:focus{
 
 #imageGrid{
     width : 100%;
-    display: grid;
     margin : 0 auto;
     justify-content: center;
     grid-template-columns: repeat(3, 23vw);
@@ -284,12 +287,19 @@ input:focus{
 
 #videoGrid{
     width : 100%;
-    display: none;
     margin : 0 auto;
     justify-content: center;
     grid-template-columns: repeat(3, 23vw);
     grid-template-rows: repeat(4, 23vw);
     gap : 1rem;
+}
+
+.gridShow{
+    display: grid;
+}
+
+.gridHide{
+    display: none;
 }
 
 .gallerypost {

@@ -1,5 +1,4 @@
-import {otherConstants} from '../Registry.js';
-
+import {otherConstants, state} from '../Registry.js';
 class PostsModel{
     constructor(){
         this.state = {};
@@ -8,6 +7,8 @@ class PostsModel{
     async init(){
         let data = await fetch(otherConstants.DATA_FILE);
         this.state = await data.json();
+        // to toggle between image and video grid
+        this.state["currentGrid"] = state.IMAGE_GRID;
     }
 
     toggleLike(postId){
@@ -26,6 +27,14 @@ class PostsModel{
         // increment or decrement like count
         post.liked ? post.likes++: post.likes--;
         return post.liked;
+    }
+
+    switchToVideoGrid(){
+        this.state.currentGrid = state.VIDEO_GRID;
+    }
+
+    switchToImageGrid(){
+        this.state.currentGrid = state.IMAGE_GRID;
     }
 
     dataFetchFunctions(){
@@ -55,6 +64,12 @@ class PostsModel{
 
             getVideos : () => {
                 return this.state.posts.videos;
+            },
+            getDisplayStatusForImageGrid : () => {
+                return this.state.currentGrid==state.IMAGE_GRID;
+            },
+            getDisplayStatusForVideoGrid : () => {
+                return this.state.currentGrid==state.VIDEO_GRID;
             },
         }
     }

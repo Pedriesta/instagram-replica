@@ -2,7 +2,6 @@ import { domCreateDiv, domCreateImage } from "../DomLayer.js";
 
 class NavigationIcon{
     constructor(imageUrl){
-        console.log(imageUrl);
         this.image = domCreateImage({
             classes : ["navigationIcons"],
             src : imageUrl

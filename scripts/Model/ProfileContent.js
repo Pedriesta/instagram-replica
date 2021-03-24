@@ -13,7 +13,6 @@ class ProfileContentModel{
     }
 
     toggleFollow(){
-        // toggle following this.state
         this.state.isFollowed = !this.state.isFollowed;
         this.state.isFollowed ? this.state.followers++ : this.state.followers--;
         return this.state.isFollowed;
@@ -40,6 +39,10 @@ class ProfileContentModel{
             getNumberOfPosts : () => {
                 return this.state.numberOfPosts;
             },
+
+            isFollowed : () => {
+                return this.state.isFollowed;
+            }
         }
     }
 }

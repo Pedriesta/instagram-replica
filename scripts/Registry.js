@@ -6,6 +6,8 @@ const ids = {
     FOLLOWING_COUNT : "following",
     FOLLOWERS_COUNT : "followers",
     USER_BIO : "bio",
+    PROFILE_CONTENT : "profileContent",
+    TITLE_BUTTONS : "titleButtons",
     IMAGE_GRID : "imageGrid",
     VIDEO_GRID : "videoGrid",
     FOLLOW_BUTTON : "follow",
@@ -14,7 +16,12 @@ const ids = {
     VIDEO_TAB : "videoTab",
     IMAGE_TAB : "imageTab",
     AVATAR : "avatar",
-    HEADER : "navbar"
+    HEADER : "navbar",
+    CARET : "arrowDown",
+    CARET_WITH_BACKGROUND : "caret",
+    SPREAD : "spread",
+    POSTS_FOLLOWER_INFO : "postsFollowFollowerInfo",
+    PROFILE : "profile"
 }
 
 const classes = {
@@ -26,6 +33,9 @@ const classes = {
     COMMENT_ICON : "commentIcon",
     NUMBER_OF_COMMENTS : "numberOfComments",
     LIKES_AND_COMMENTS : "likesComments",
+    SHOW_GRID :  "gridShow",
+    HIDE_GRID : "gridHide",
+    MATERIAL_ICON : "material-icons"
 }
 
 const icons = {
@@ -39,7 +49,14 @@ const icons = {
     GRID_OFF : "./icons/grid_off-24px.svg",
     HOME : "./icons/home-24px.svg",
     USER : "./icons/perm_identity-24px.svg",
-    EXPLORE : "./icons/explore-24px.svg"
+    EXPLORE : "./icons/explore-24px.svg",
+    CARET : "./icons/keyboard_arrow_down-white-18dp.svg",
+    SPREAD : "./icons/more_horiz-24px.svg"
+}
+
+const state = {
+    IMAGE_GRID : "imageGrid",
+    VIDEO_GRID : "videoGrid"
 }
 
 const otherConstants = {
@@ -48,4 +65,4 @@ const otherConstants = {
 }
 
 
-export {ids, classes, icons, otherConstants};
+export {ids, classes, icons, otherConstants, state};
