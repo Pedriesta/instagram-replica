@@ -9,12 +9,12 @@ class PostsView{
     }
 
     // attach eventHandlers from the ViewEventHandler File
-    toggleLike = viewEventHandlers.toggleLike;
-    editLikeCount = viewEventHandlers.editLikeCount;
-    viewImages = viewEventHandlers.viewImages;
-    viewVideos = viewEventHandlers.viewVideos;
-    loadVideo = viewEventHandlers.loadVideo;
-    changePageViewVideo = viewEventHandlers.changePageViewVideo;
+    // toggleLike = viewEventHandlers.toggleLike;
+    // editLikeCount = viewEventHandlers.editLikeCount;
+    // viewImages = viewEventHandlers.viewImages;
+    // viewVideos = viewEventHandlers.viewVideos;
+    // loadVideo = viewEventHandlers.loadVideo;
+    // changePageViewVideo = viewEventHandlers.changePageViewVideo;
 
 
     // Main Render Method
