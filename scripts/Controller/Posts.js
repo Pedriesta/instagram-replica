@@ -19,17 +19,23 @@ class PostsController{
     }
 
     toggleLike = (id) => {
-        let liked = this.model.toggleLike(id);
+        const liked = this.model.toggleLike(id);
+        // this.view.render(this.model.data);
+        // this.view.attachEventListenersStaticElements();
         this.view.editLikeCount(id, this.model.data.getNumberOfLikes(id));
         this.view.toggleLike(id, liked);
     }
 
     viewImages = () => {
+        // this.view.render(this.model.data);
+        // this.view.attachEventListenersStaticElements();
         // set videos display to none
         this.view.viewImages();
     }
 
     viewVideos = () => {
+        // this.view.render(this.model.data);
+        // this.view.attachEventListenersStaticElements();
         this.view.viewVideos();
     }
 

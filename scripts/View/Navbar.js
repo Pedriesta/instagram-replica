@@ -1,17 +1,17 @@
+import { ids } from '../Registry.js';
 import {Navbar} from './Components/Navbar.js';
 import { domGetElementById } from './DomLayer.js';
 
 class NavbarView{
     constructor(){
-        this.controllerEventHandler = {};
+        this.controllerEventHandlers = {};
     }
     // Main Render Method
     render(data){
-        this.parent = domGetElementById("navbar");
+        const header = domGetElementById(ids.HEADER);
         this.navbar = new Navbar(data.getProfilePicture());
-        this.parent.appendChild(this.navbar);
+        header.appendChild(this.navbar);
     }
-
 }
 
 export{NavbarView};

@@ -5,8 +5,8 @@ class NavbarController{
     }
 
     async init(){
-        this.view.controllerEventHandlers = {}
         await this.model.init();
+        this.view.controllerEventHandlers = {}
         this.view.render(this.model.data);
     }
 }

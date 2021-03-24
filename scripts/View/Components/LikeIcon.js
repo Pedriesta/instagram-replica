@@ -2,10 +2,13 @@ import { domCreateImage} from '../DomLayer.js';
 import { classes, icons } from '../../Registry.js';
 
 class LikeIcon{
-    constructor(){
+    constructor(isLiked){
+        let src = "";
+        isLiked ? src=icons.HEART_FILLED : src=icons.HEART;
+
         const likeIcon = domCreateImage({
             classes : [classes.LIKE_ICON, classes.ICON],
-            src : icons.HEART,
+            src : src,
             alt : "Like"
         });
         return likeIcon;

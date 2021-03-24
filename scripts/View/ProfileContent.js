@@ -5,7 +5,7 @@ import {ids} from '../Registry.js';
 
 class ProfileContentView{
     constructor(){
-        this.controllerEventHandler = {};
+        this.controllerEventHandlers = {};
     }
 
     // attach eventHandlers from the ViewEventHandler File

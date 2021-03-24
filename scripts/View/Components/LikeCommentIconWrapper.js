@@ -8,11 +8,11 @@ import { classes} from '../../Registry.js';
 
 class LikeCommentIconWrapper{
     constructor(post){
-        this.likeIcon = new LikeIcon(post.id);
+        this.likeIcon = new LikeIcon(post.liked);
         this.numberOfLikes = new NumberOfLikesParagraph(post.likes);
 
         this.commentIcon = new CommentIcon(post.id);
-        this.numberOfComments = new NumberOfCommentsParagraph(post.likes);
+        this.numberOfComments = new NumberOfCommentsParagraph(post.comments);
 
         const iconWrapper = domCreateDiv({
             classes : [classes.LIKES_AND_COMMENTS],

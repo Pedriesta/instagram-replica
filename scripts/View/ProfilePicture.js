@@ -2,7 +2,7 @@ import {ProfilePicture} from './Components/ProfilePicture.js';
 
 class ProfilePictureView{
     constructor(){
-        this.controllerEventHandler = {};
+        this.controllerEventHandlers = {};
     }
     // Main Render Method
     render(data){

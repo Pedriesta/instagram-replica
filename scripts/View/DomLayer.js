@@ -1,4 +1,4 @@
-function domCreateImage({id=null, classes=null, src, alt}){
+function domCreateImage({id=null, classes=null, src, alt, attributes}){
     const image = document.createElement("img");
     if(id) image.id = id;
 
@@ -7,6 +7,12 @@ function domCreateImage({id=null, classes=null, src, alt}){
     image.setAttribute("src", src);
     image.setAttribute("alt", alt);
 
+    for(const attribute in attributes){
+        if(attributes.hasOwnProperty(attribute)){
+            if(attribute)
+            image.setAttribute(attribute, attributes[attribute]);
+        }
+    }
     return image;
 }
 

@@ -1,4 +1,4 @@
-import { icons } from "../../Registry.js";
+import { icons, ids } from "../../Registry.js";
 import { domCreateDiv } from "../DomLayer.js";
 import { NavigationIcon} from './NavigationIcon.js';
 import {Avatar} from './Avatar.js';
@@ -9,7 +9,7 @@ class NavigationIconWrapper{
         this.messages = new NavigationIcon(icons.CHAT_BUBBLE);
         this.explore = new NavigationIcon(icons.EXPLORE);
         this.activity = new NavigationIcon(icons.HEART);
-        this.avatar = new Avatar(avatarUrl);
+        this.avatar = new Avatar(avatarUrl, ids.AVATAR);;
 
         this.wrapper = domCreateDiv({
             id : "navigationButtons",

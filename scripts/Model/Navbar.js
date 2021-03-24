@@ -3,7 +3,7 @@ import {otherConstants} from '../Registry.js';
 class NavbarModel{
     constructor(){
         this.state = {};
-        this.data = this.dataFetchFunctions();
+        this.data = this.getDataFunctions();
     }
 
     async init(){
@@ -11,7 +11,7 @@ class NavbarModel{
         this.state = await data.json();
     }
 
-    dataFetchFunctions(){
+    getDataFunctions(){
         return {
             getProfilePicture : () => {
                 return this.state.profilePicture;

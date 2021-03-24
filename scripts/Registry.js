@@ -13,7 +13,8 @@ const ids = {
     VIDEO_GRID_ICON : "videoGridIcon",
     VIDEO_TAB : "videoTab",
     IMAGE_TAB : "imageTab",
-    AVATAR : "avatar"
+    AVATAR : "avatar",
+    HEADER : "navbar"
 }
 
 const classes = {

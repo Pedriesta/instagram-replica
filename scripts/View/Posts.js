@@ -5,7 +5,7 @@ import {ids} from '../Registry.js';
 
 class PostsView{
     constructor(){
-        this.controllerEventHandler = {};
+        this.controllerEventHandlers = {};
     }
 
     // attach eventHandlers from the ViewEventHandler File
