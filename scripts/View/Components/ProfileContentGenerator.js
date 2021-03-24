@@ -43,14 +43,10 @@ class ProfileContent{
         this.postsFollowFollowerInfo.innerHTML = `<b id="numberOfPosts">${userInfo.numberOfPosts} </b> posts<span class="space"></span>
         <b id="followers">${userInfo.followers} </b> followers<span class="space"></span><b id="following">${userInfo.following}</b> following`;
 
-
-
         this.bio = domCreateDiv({
             id : ids.USER_BIO,
             innerHTML : userInfo.bio
         });
-
-
 
         this.profileContent = domCreateDiv({
             id : ids.PROFILE_CONTENT,

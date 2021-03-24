@@ -38,10 +38,9 @@ class VideoGrid{
         const videoGridOld = domGetElementById(ids.VIDEO_GRID);
         const videoGridNew = videoGridOld.cloneNode(true);
 
-
         videoGridNew.innerHTML = '';
         this.videoGrid = videoGridNew;
-        this.loadVideos(videos);
+        this.loadVideos(videos, controllerEventHandlers);
         showOrHideGrid(showGrid, this.videoGrid);
         toggleVideoGridIcon(showGrid);
         //eventListener common for onClick on likeIcons
@@ -117,6 +116,14 @@ function toggleImageGridIcon(isGridActive){
             }
         });
     }
+}
+
+function flushElement(id){
+    const element = domGetElementById(id);
+    const flushedElement = element.cloneNode(true);
+
+    flushedElement.innerHTML = '';
+    return flushedElement;
 }
 
 export{ImageGrid, VideoGrid};

@@ -9,7 +9,6 @@ class ProfilePicture{
             alt : "Profile Picture"
         });
         domGetElementById(ids.PROFILE_PICTURE_WRAPPER).appendChild(this.profilePicture);
-        console.log(domGetElementById(ids.PROFILE_PICTURE_WRAPPER));
         return this.profilePicture;
     }
 }

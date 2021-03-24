@@ -23,7 +23,9 @@ class ProfileContentView{
         }
         const profileContent = new ProfileContent(userInfo, data.isFollowed(), this.controllerEventHandlers.toggleFollow);
         const profile = domGetElementById(ids.PROFILE);
-        profile.removeChild(profile.childNodes[2]);
+        const oldProfileContent = domGetElementById(ids.PROFILE_CONTENT);
+        if(oldProfileContent)
+        oldProfileContent.remove();
         profile.appendChild(profileContent)
     }
 
